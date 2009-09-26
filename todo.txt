@@ -2,12 +2,3 @@
 * Be able to do cold setup
 * Make sure that app gets reloaded when new model is loaded
 
-
-First time setup
-
-* Get plugins
-* Modify config/environment.rb to add
-** add engines boot to top
-** add lines to config.plugins to get correct load order
-* make directory lib/workers
-* do rake backgroundrb:start

@@ -7,17 +7,32 @@ This add the ability to have an object database using rails as its user interfac
 Installation
 ============
 
-Install 3rd party plugin dependencies
+I. Install 3rd party plugin dependencies
 
 1. classic_pagination
 2. active_record_defaults
 3. acts_as_tree
-4. engines (version 1.2.0)
+4. engines (version 1.2.0 - script/plugin install git://github.com/lazyatom/engines.git)
 5. has_many_polymorphs
 6. acts_with_metadata
 7. acts_as_database_object
-8. 
-6. ruby_command
+8. rw_backgroundrb
+6. rw_ruby_command_handler
+
+II. Modify config/environment.rb to add
+
+1. add line to top of environment.rb before boot
+
+   require File.join(File.dirname(__FILE__), '../vendor/plugins/engines/boot')
+
+2. modify the config.plugins line to be the following
+
+   config.plugins = [ :acts_as_tree, :has_many_polymorphs, :acts_with_metadata, :acts_as_database_object, :all]
+
+III. Misc setup
+
+1. Make lib/workers directory
+2. run rake backgroundrb:start
 
 Example
 =======
