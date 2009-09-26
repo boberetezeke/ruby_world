@@ -9,15 +9,25 @@ Installation
 
 I. Install 3rd party plugin dependencies
 
-1. classic_pagination
-2. active_record_defaults
-3. acts_as_tree
-4. engines (version 1.2.0 - script/plugin install git://github.com/lazyatom/engines.git)
-5. has_many_polymorphs
-6. acts_with_metadata
-7. acts_as_database_object
-8. rw_backgroundrb
-6. rw_ruby_command_handler
+1. rw_classic_pagination (script/plugin install git://github.com/masterkain/classic_pagination.git)
+2. active_record_defaults (script/plugin install http://svn.viney.net.nz/things/rails/plugins/active_record_defaults)
+3. acts_as_tree (script/plugin install git://github.com/rails/acts_as_tree.git)
+4. engines (version 1.2.0)
+  a. cd vendor/plugins
+  b. git clone git://github.com/lazyatom/engines.git
+  c. cd engines
+  d. git checkout -b 2.1.0
+5. has_many_polymorphs (version that worked with rails 2.1.x)
+  a. cd vendor/plugins
+  b. git clone git://github.com/fauna/has_many_polymorphs.git
+  c. cd has_many_polymorphs
+  d. git checkout fbe21edf4d73fdd42b0e46104419a506168f5adb 
+6. acts_with_metadata (script/plugin install git://githujb.com/boberetezeke/acts_with_metadata.git)
+7. acts_as_database_object (script/plugin install git://githujb.com/boberetezeke/acts_as_database_object.git)
+8. rw_backgroundrb (pre 0.2 version)
+  a. script/plugin install git://github.com/boberetezeke/rw_backgroundrb.git
+  b. mv rw_backgroundrb backgroundrb
+6. rw_ruby_command_handler (script/plugin install git://githujb.com/boberetezeke/rw_ruby_command_handler.git)
 
 II. Modify config/environment.rb to add
 
@@ -31,8 +41,7 @@ II. Modify config/environment.rb to add
 
 III. Misc setup
 
-1. Make lib/workers directory
-2. run rake backgroundrb:start
+1. run rake backgroundrb:start
 
 Example
 =======
