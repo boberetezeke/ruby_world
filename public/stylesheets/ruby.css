@@ -1,0 +1,26 @@
+.ruby .normal {color: rgb(230, 230, 230);}
+.ruby .comment { color: #099; font-style: italic; }
+.ruby .keyword { color: #A00; font-weight: bold; }
+.ruby .method { color: #077; }
+.ruby .class { color: #074; }
+.ruby .module { color: #050; }
+.ruby .punct { color: #447; font-weight: bold; }
+.ruby .symbol { color: #005; }
+.ruby .string { color: #944}
+.ruby .char { color: #F07; }
+.ruby .ident { color: rgb(230, 230, 230); }
+.ruby .constant { color: #07F; }
+.ruby .regex { color: #B66 }
+.ruby .number { color: #F99; }
+.ruby .attribute { color:  #077; }
+.ruby .global { color: #7FB; }
+.ruby .expr { color: #227; }
+.ruby .escape { color: #277; }
+
+.comment { color: #099; font-style: italic; }
+.keyword { color: #074; font-weight: bold; }
+.symbol { color: #005; }
+.string { color: #944}
+.builtin { color: #077; font-weight: bold; }
+.variable { color: rgb(230, 230, 230); }
+

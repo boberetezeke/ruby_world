@@ -1,0 +1,173 @@
+#list {
+  margin:0;
+  margin-top:10px;
+  padding:0;
+  list-style-type: none;
+}
+#list li {
+  margin:0;
+  margin-bottom:4px;
+  padding:5px;
+  border:1px solid #888;
+  cursor:move;
+}
+.tasks-table {
+  background-color: #9999CC;
+  padding: 5px;
+}
+.tasks-heading {
+  background-color: #99CCFF
+}
+.tasks-neutral {
+  background-color: #99FF66
+}
+.tasks-should-activate {
+  background-color: #CCFF00
+}
+.tasks-coming-due {
+  background-color: #FFFF66
+}
+.tasks-almost-overdue {
+  background-color: #FFCC66
+}
+.tasks-overdue {
+  background-color: #FF9966
+}
+.sub-section-outer {
+  padding: 20px 10px 5px 0px;
+}
+.sub-section {
+  background-color: rgb(118,174,178);
+}
+.main-content {
+  background-color: rgb(118,174,178);
+  padding: 5px;
+  margin: 10px 0px 0px 0px;
+}
+.sub-section-inner {
+  padding: 0px 5px 0px 5px
+}
+.sub-section-heading {
+  background-color: rgb(152,195,199);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: bigger;
+}
+.sub-section-content {
+  background-color: rgb(152,195,199);
+  margin: 3px 0px 0px 0px;
+}
+
+.title-and-actions {
+  background-color: rgb(152,195,199);
+  margin-bottom:20px;
+}
+
+.actions {
+  color: rgb(230, 230, 230)
+}
+
+.title {
+  font-size: 18pt;
+  font-weight: bold;
+  color: rgb(255,255,255)
+}
+
+.title-and-tags {
+  background-color: rgb(152,195,199);
+  margin-bottom:20px;
+}
+
+.tags-title {
+  font-size: 14pt;
+  font-weight: bold;
+  color: rgb(255,255,255)
+}
+
+.tags {
+  color: rgb(230, 230, 230)
+}
+
+
+.model-list-table {
+  background-color: rgb(145,166,78);
+}
+
+.model-list-heading-row {
+  background-color: rgb(152,195,199);
+  color: rgb(255,255,255);
+}
+
+.model-list-normal-row {
+  background-color: rgb(118,174,178);
+  color: rgb(230, 230, 230)
+}
+
+.model-show-heading-data {
+  font-size: 14pt;
+  background-color: rgb(152,195,199);
+  color: rgb(255, 255, 255);
+}
+
+.model-show-normal-data {
+  color: rgb(230, 230, 230)
+}
+
+.model-form-heading-data {
+  font-size: 14pt;
+  background-color: rgb(152,195,199);
+  color: rgb(255, 255, 255);
+}
+
+.model-form-normal-data {
+  color: rgb(230, 230, 230)
+}
+
+.change-time {
+  font-size: 14pt;
+  color: rgb(230, 230, 230)
+}
+
+.change-description {
+  color: rgb(230, 230, 230)
+}
+
+.change-overflow {
+  color: rgb(230, 230, 230);
+  font-size: 14pt;
+}
+
+.time-divider {
+  font-size: 14pt;
+  background-color: rgb(152,195,199);
+  color: rgb(255, 255, 255);
+}
+
+.history {
+  color: rgb(230, 230, 230)
+}
+
+body {
+  background-color: rgb(171,194,97)
+}
+
+.textile-table th {
+  color: rgb(255, 255, 255);
+}
+
+.textile-table tr {
+  background-color: rgb(152,195,199);
+}
+
+.textile-table td {
+  color: rgb(230, 230, 230);
+}
+
+.command {
+  background-color: rgb(118,174,178);
+}
+.context {
+  background-color: rgb(118,174,178);
+  color: rgb(230, 230, 230)
+}
+
