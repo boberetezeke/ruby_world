@@ -7,16 +7,22 @@ This add the ability to have an object database using rails as its user interfac
 Installation
 ============
 
+0. Install 3rd party gems
+
+1. SimpleTrace
+2. ferret
+3. acts_as_ferret
+
 I. Install 3rd party plugin dependencies
 
-1. rw_classic_pagination (script/plugin install git://github.com/masterkain/classic_pagination.git)
+1. classic_pagination (script/plugin install git://github.com/masterkain/classic_pagination.git)
 2. active_record_defaults (script/plugin install http://svn.viney.net.nz/things/rails/plugins/active_record_defaults)
 3. acts_as_tree (script/plugin install git://github.com/rails/acts_as_tree.git)
 4. engines (version 1.2.0)
   a. cd vendor/plugins
   b. git clone git://github.com/lazyatom/engines.git
   c. cd engines
-  d. git checkout -b 2.1.0
+  d. git checkout 2.1.0
 5. has_many_polymorphs (version that worked with rails 2.1.x)
   a. cd vendor/plugins
   b. git clone git://github.com/fauna/has_many_polymorphs.git
