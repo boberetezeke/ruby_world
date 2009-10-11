@@ -76,6 +76,12 @@ namespace :ruby_world do
     "git://github.com/boberetezeke/acts_as_database_object.git")
 
   install_plugin_task(
+    "Setup acts_with_metadata", 
+    :setup_acts_with_metadata, 
+    "acts_with_metadata", 
+    "git://github.com/boberetezeke/acts_with_metadata.git")
+
+  install_plugin_task(
     "Setup active_record_defaults", 
     :setup_active_record_defaults, 
     "active_record_defaults", 
@@ -98,6 +104,7 @@ namespace :ruby_world do
 	 :setup_pagination, 
     :setup_acts_as_tree, 
     :setup_active_record_defaults, 
+    :setup_acts_with_metadata, 
     :setup_acts_as_database_object, 
     :setup_rw_ruby_command_handler, 
     :setup_rw_backgroundrb, 
