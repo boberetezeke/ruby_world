@@ -1,6 +1,5 @@
 require "ftools"
 
-puts "Dir.getwd = #{Dir.getwd}"
 %w{javascripts stylesheets images}.each do |subdir|
 	Dir["vendor/plugins/ruby_world/public/#{subdir}/*"].each do |fn| 
 		dest_fn = "public/#{subdir}/#{File.basename(fn)}"
