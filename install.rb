@@ -1,5 +1,7 @@
 require "ftools"
 
+# copy public files
+
 %w{javascripts stylesheets images}.each do |subdir|
 	Dir["vendor/plugins/ruby_world/public/#{subdir}/*"].each do |fn| 
 		dest_fn = "public/#{subdir}/#{File.basename(fn)}"
@@ -11,3 +13,57 @@ require "ftools"
 		end
 	end
 end
+
+# modify environment.rb
+
+lines = File.readlines("config/environment.rb")
+
+engine_boot_index = nil
+boot_index = nil
+config_plugins_index = nil
+config_plugins = nil
+lines.each_with_index do |line, index|
+	case line
+	when /^require .*vendor\/plugins\/engines\/boot'\)$/
+		engine_boot_index = index
+	when /^require .*'boot'\)$/
+		boot_index = index
+	when /config.plugins\s*=\s*\[(.*)\]/
+		config_plugins_index = index
+		config_plugins = $1
+	end
+end
+
+ORDERED_PLUGINS = ":acts_as_tree, :has_many_polymorphs, :acts_with_metadata, :acts_as_database_object, "
+if config_plugins_index then
+	if config_plugins =~ /#{ORDERED_PLUGINS}/ then
+		puts "WARNING: ordered plugins already added"
+	else
+	   config_changed = true
+      # if the config.plugins is commented out
+		if lines[config_plugins_index] =~ /#.*config\.plugins/ then
+		  # replace the line
+		  lines[config_plugins_index] = "  config.plugins = [#{ORDERED_PLUGINS}, :all]"
+		else
+		  # insert the plugins at the beginning and all at the end
+		  lines[config_plugins_index].sub!(/config.plugins\s*=\s*\[/, "config.plugins = [#{ORDERED_PLUGINS}")
+		  lines[config_plugins_index].sub!(/\]/, ", :all]")
+		end
+	end
+else
+	puts "ERROR: config.plugins line not found"
+end
+
+if boot_index && engine_boot_index then
+	puts "WARNING: engine boot line already added"
+elsif boot_index && !engine_boot_index then
+	config_changed = true
+	lines.insert(boot_index, 
+		"require File.join(File.dirname(__FILE__), '../vendor/plugins/engines/boot')")
+end
+
+if config_changed then
+	puts "STATUS: re-writing config/environement.rb"
+	File.open("config/environment.rb", "w") {|f| lines.each {|line| f.puts line}}
+end
+
