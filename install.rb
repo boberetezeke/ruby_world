@@ -84,6 +84,7 @@ copy_public_files
 modify_environment_rb
 
 system "rake ruby_world:setup"
+system "rake backgroundrb:setup"
 
 #puts "*************************************************"
 #puts "do rake ruby_world:setup to install plugins      "

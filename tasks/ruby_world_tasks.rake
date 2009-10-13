@@ -110,6 +110,5 @@ namespace :ruby_world do
     :setup_rw_backgroundrb, 
     :setup_rw_search_command_handler, 
     :setup_has_many_polymorphs,
-    :setup_engines,
-    "backgroundrb:setup"]
+    :setup_engines]
 end
