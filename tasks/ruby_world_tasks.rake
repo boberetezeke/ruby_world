@@ -110,9 +110,6 @@ namespace :ruby_world do
     :setup_rw_backgroundrb, 
     :setup_rw_search_command_handler, 
     :setup_has_many_polymorphs,
-    :setup_engines]
-  desc "Restart BackgrounDRb Server"
-  task :restart => [:stop, :start] do
-    puts "Restarted BackgrounDRb"
-  end  
+    :setup_engines,
+    "backgroundrb:setup"]
 end
