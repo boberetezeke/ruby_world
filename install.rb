@@ -15,6 +15,8 @@ def copy_public_files
   end
 end
 
+ORDERED_PLUGINS = ":acts_as_tree, :has_many_polymorphs, :acts_with_metadata, :acts_as_database_object, "
+
 # modify environment.rb
 def modify_environment_rb
   lines = File.readlines("config/environment.rb")
@@ -35,7 +37,6 @@ def modify_environment_rb
     end
   end
 
-  ORDERED_PLUGINS = ":acts_as_tree, :has_many_polymorphs, :acts_with_metadata, :acts_as_database_object, "
   if config_plugins_index then
     if config_plugins =~ /#{ORDERED_PLUGINS}/ then
       puts "WARNING: ordered plugins already added"
