@@ -1,5 +1,14 @@
 require "ftools"
 
+# Fix up system call for Windows
+if RUBY_PLATFORM == "i386-mswin32" then
+  require 'Win32API' 
+
+  def system(command)
+    Win32API.new("crtdll", "system", ['P'], 'L').Call(command)
+  end  
+end
+
 # copy public files
 def copy_public_files
   %w{javascripts stylesheets images}.each do |subdir|
