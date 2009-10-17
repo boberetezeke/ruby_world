@@ -80,7 +80,7 @@ def modify_environment_rb
 end
 
 def remove_controller_application_rb
-  File.unlink("app/controllers/application.rb")
+	File.unlink("app/controllers/application.rb") rescue nil
 end
 
 # main steps
