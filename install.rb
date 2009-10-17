@@ -79,9 +79,14 @@ def modify_environment_rb
   end
 end
 
+def remove_controller_application_rb
+  File.unlink("app/controllers/application.rb")
+end
+
 # main steps
 copy_public_files
 modify_environment_rb
+remove_controller_application_rb
 
 system "rake ruby_world:setup"
 system "rake backgroundrb:setup"
