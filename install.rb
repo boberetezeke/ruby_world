@@ -24,7 +24,7 @@ def copy_public_files
   end
 end
 
-ORDERED_PLUGINS = ":acts_as_tree, :has_many_polymorphs, :acts_with_metadata, :acts_as_database_object, "
+ORDERED_PLUGINS = ":acts_as_tree, :has_many_polymorphs, :acts_with_metadata, :acts_as_database_object"
 
 # modify environment.rb
 def modify_environment_rb
