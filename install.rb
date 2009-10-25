@@ -13,7 +13,9 @@ end
 def copy_public_files
   %w{javascripts stylesheets images flash}.each do |subdir|
     Dir["vendor/plugins/ruby_world/public/#{subdir}/*"].each do |fn| 
-      dest_fn = "public/#{subdir}/#{File.basename(fn)}"
+      dest_dir = "public/#{subdir}"
+      Dir.mkdir(dest_dir) unless File.exist?(dest_dir)
+      dest_fn = "#{dest_dir}/#{File.basename(fn)}"
       puts "copying #{File.basename(fn)} to #{dest_fn}"
       begin
         File.copy(fn, dest_fn)
