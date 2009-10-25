@@ -33,8 +33,13 @@ namespace :ruby_world do
       puts "running task: #{task_name}"
       unless File.exist?("#{RAILS_ROOT}/vendor/plugins/#{plugin_dir}")
         Dir.chdir RAILS_ROOT do
-          my_system "ruby #{RAILS_ROOT}/script/plugin install #{plugin_path}"
-          m = /\/([^\/]*)\.[^\.]*$/.match(plugin_path)
+          my_system "ruby #{RAILS_ROOT}/script/plugin install #{plugin_path}"	
+          if /^git/.match(plugin_path) then
+            m = /\/([^\/]*)\.[^\.]*$/.match(plugin_path)
+          else # must be svn
+            m = /\/([^\/]*)$/.match(plugin_path)
+          end
+          puts "m[1] = #{m[1]}' ==? '#{plugin_dir}'"
           if m[1] != plugin_dir then
             Dir.chdir "vendor/plugins" do
               my_system "mv #{m[1]} #{plugin_dir}"
