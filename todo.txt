@@ -1,4 +1,5 @@
-* Get background jobs working
-* Be able to do cold setup
-* Make sure that app gets reloaded when new model is loaded
-
+* add tag context. This should allow:
+** object creation so objects are automatically tagged
+** allow objects that are brought in from the outside get tagged according to some context rules
+** Listing of all objects that show up within a tag context
+** Have command line respond to current tag context
